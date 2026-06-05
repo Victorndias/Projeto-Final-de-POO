@@ -1,12 +1,9 @@
 public class Main{
     public static void main(String[] args){
         
-        //criando os controllers das classes controller
         UsuarioController usuarioController = new UsuarioController();
         HospedeController hospedeController = new HospedeController();
 
-        //inserido as informações do usuario
-        //está new Hospede pq usuario tbm é um usuário
         Usuario usuario1 = new Hospede(
               1,
                 "João Silva",
@@ -19,10 +16,8 @@ public class Main{
                 "joao@email.com"
         );
 
-        //com as informações acima criamos o usuario1
         usuarioController.criarUsuario(usuario1);
 
-        //mesma ideia de usuário
         Hospede hospede1 = new Hospede(
              2,
                 "Maria Oliveira",
@@ -37,7 +32,6 @@ public class Main{
 
         hospedeController.criarHospede(hospede1);
 
-        //Aqui o for vai percorrer a Array e mostrar cada usuário que está armazenado
         System.out.println("\nLista de Usuarios: ");
         for(Usuario u : usuarioController.listarUsuarios()){
             System.out.println("ID: " + u.getid() + 
@@ -56,8 +50,6 @@ public class Main{
             "| Email: " + h.getEmail());
         }
 
-        //nessa parte vai informar os dados correto que você quer fazer a mudança
-        //metedo para editar os dados já armazenado
         hospedeController.editarHospede(
              2,
                 "Maria Oliveira",
@@ -81,7 +73,6 @@ public class Main{
              "| Email: " + hEditado.getEmail()
             );
 
-            //metedo para desativar o Hospede que já esta ativo no sitema
             hospedeController.desativarHospede(2);
 
             System.out.println("\nStatus do hospede apos desativacao: ");
